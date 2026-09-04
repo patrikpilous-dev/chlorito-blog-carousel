@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Chlorito blog carousel — náhled</title>
+<style>
+  body{font-family:system-ui,sans-serif;max-width:1000px;margin:0 auto;padding:24px;color:#111;background:#fff}
+  h1{font-size:20px}
+  .meta{color:#666;font-size:13px;margin-bottom:28px}
+  .article{border:1px solid #e5e5e5;border-radius:8px;padding:8px 24px 20px;margin-bottom:32px}
+  .article h2{font-size:15px;color:#444;font-weight:600}
+  .article h2 a{color:inherit}
+  .poz{font-size:12px;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-top:18px}
+</style>
+</head>
+<body>
+<h1>Chlorito — blog carousel (náhled dat)</h1>
+<div class="meta" id="meta">Načítám…</div>
+<div id="out"></div>
+<script>
+const CSS = ".ppcar{margin:10px 0 26px}.ppcar h3{font-size:16px;margin:0 0 12px;font-weight:600}.ppcar-wrap{position:relative}.ppcar-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:2px;scrollbar-width:none}.ppcar-track::-webkit-scrollbar{display:none}.ppcar-item{flex:0 0 46%;max-width:210px;scroll-snap-align:start;text-align:center}@media(min-width:768px){.ppcar-item{flex-basis:23%}}.ppcar .ppcar-item a{display:block;text-decoration:none !important;color:inherit}.ppcar-item img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;display:block;background:#fff}.ppcar-name{margin:10px 4px 4px;font-size:13px;line-height:1.35;min-height:2.7em}.ppcar-price{font-size:15px;font-weight:600}.ppcar-stock{font-size:12px;color:#009901;margin-top:4px}.ppcar-btn{position:absolute;top:34%;transform:translateY(-50%);width:36px;height:36px;border:1px solid #ddd;border-radius:50%;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}.ppcar-btn:hover{background:#000;color:#fff}.ppcar-prev{left:-8px}.ppcar-next{right:-8px}";
+const s = document.createElement("style"); s.textContent = CSS; document.head.appendChild(s);
+
+function renderCarousel(host, products, nadpis) {
+  const sec = document.createElement("section");
+  sec.className = "ppcar";
+  let html = '<h3>' + nadpis + '</h3><div class="ppcar-wrap"><button class="ppcar-btn ppcar-prev">&#10094;</button><div class="ppcar-track">';
+  for (const p of products) {
+    html += '<div class="ppcar-item"><a href="' + p.url + '" target="_blank"><img loading="lazy" src="' + p.img + '"><div class="ppcar-name">' + p.name + '</div><div class="ppcar-price">' + new Intl.NumberFormat("cs-CZ",{style:"currency",currency:"CZK",maximumFractionDigits:0}).format(p.price) + '</div><div class="ppcar-stock">Skladem</div></a></div>';
+  }
+  html += '</div><button class="ppcar-btn ppcar-next">&#10095;</button></div>';
+  sec.innerHTML = html;
+  host.appendChild(sec);
+  const track = sec.querySelector(".ppcar-track");
+  sec.querySelector(".ppcar-prev").onclick = () => track.scrollBy({left:-track.clientWidth,behavior:"smooth"});
+  sec.querySelector(".ppcar-next").onclick = () => track.scrollBy({left:track.clientWidth,behavior:"smooth"});
+}
+
+fetch("index.json").then(r => r.json()).then(async idx => {
+  document.getElementById("meta").textContent =
+    "Vygenerováno: " + idx.generated + " · článků: " + idx.count + " · náhled prvních 10";
+  const out = document.getElementById("out");
+  for (const path of idx.articles.slice(0, 10).concat(["_default"])) {
+    const slug = path === "_default" ? "_default" : path.replace(/\/$/,"").split("/").pop();
+    const d = await fetch("a/" + slug + ".json").then(r => r.json());
+    const div = document.createElement("div");
+    div.className = "article";
+    div.innerHTML = path === "_default"
+      ? "<h2>default (bestsellery pro nenamapované)</h2>"
+      : '<h2><a href="https://www.chlorito.cz' + path + '" target="_blank">' + path + "</a></h2>";
+    const t = document.createElement("div"); t.className = "poz"; t.textContent = "nahoře — pod prvním odstavcem";
+    div.appendChild(t);
+    renderCarousel(div, d.top, "Co se vám k tomu bude hodit");
+    const b = document.createElement("div"); b.className = "poz"; b.textContent = "dole — za posledním odstavcem";
+    div.appendChild(b);
+    renderCarousel(div, d.bottom, "Co se vám k tomu bude hodit");
+    out.appendChild(div);
+  }
+});
+</script>
+</body>
+</html>

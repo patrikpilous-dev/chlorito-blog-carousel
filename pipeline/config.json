@@ -1,0 +1,677 @@
+{
+  "shop_url": "https://www.chlorito.cz",
+  "pages_base": "https://patrikpilous-dev.github.io/chlorito-blog-carousel",
+  "ga_measurement_id": "ZDE_DOPLNIT_PO_ZALOZENI_STREAMU",
+  "products_per_carousel": 10,
+  "positions": 2,
+  "min_products": 4,
+  "max_category_pages": 3,
+  "sales_window_days": 30,
+  "fallback_enabled": true,
+  "fallback_categories": [
+    "/bazenova-chemie/"
+  ],
+  "articles": {
+    "/blog/3-tipy--jak-snizit-chlor-v--bazenu/": {
+      "categories": [
+        "/chlor-do-bazenu/",
+        "/bezchlorova-chemie/",
+        "/bazenove-testery-volny-chlor--aktivni/"
+      ]
+    },
+    "/blog/alergie-na-chlor-v-bazenu--jake-ma-reseni/": {
+      "categories": [
+        "/bazenove-testery-volny-chlor--aktivni/",
+        "/bezchlorova-chemie/",
+        "/kyslikove-tablety/"
+      ]
+    },
+    "/blog/alkalita-clanek/": {
+      "categories": [
+        "/bazenove-testery/",
+        "/bazenove-testery-alkalita/",
+        "/alkalita-plus/"
+      ]
+    },
+    "/blog/alkalita-vody-v-bazenu-rozhoduje-o-stabilnim-ph-vic-nez-samotna-chemie/": {
+      "categories": [
+        "/bazenova-chemie/",
+        "/uprava-hodnoty-ph/",
+        "/ph-plus-1l-kapalny/"
+      ]
+    },
+    "/blog/ameba-v-bazenu--co-to-je-a-jak-se-ji-uspesne-branit/": {
+      "categories": [
+        "/chlor-do-bazenu/",
+        "/tablety-do-bazenu/",
+        "/piskove-filtrace-2/"
+      ]
+    },
+    "/blog/automaticke-davkovace-bazenove-chemie--komfort-a-kontrola-behem-letni-sezony/": {
+      "categories": [
+        "/uprava-hodnoty-ph/",
+        "/bazenova-chemie/",
+        "/chlor-do-bazenu/"
+      ]
+    },
+    "/blog/bazen-na-podzim/": {
+      "categories": [
+        "/bazenove-sitky/",
+        "/vysavace-do-bazenu/",
+        "/plachty-na-bazen/"
+      ]
+    },
+    "/blog/bazenova-chemie-clanek/": {
+      "categories": [
+        "/tablety-do-bazenu-5v1/",
+        "/chlornan-sodny/",
+        "/chlor-trio-tablety/"
+      ]
+    },
+    "/blog/bazenova-hadice-clanek/": {
+      "categories": [
+        "/piskove-filtrace-2/",
+        "/cerpadla-k-bazenu/",
+        "/bazenove-hadice-32-mm/"
+      ]
+    },
+    "/blog/bazenove-cistice-pripravky-bazenove-chemie-pro-cisteni/": {
+      "categories": [
+        "/bezchlorova-chemie/",
+        "/bazenove-cistice/",
+        "/zakladni-cistic-bazenu-5l/"
+      ]
+    },
+    "/blog/bazenove-piskove-filtrace/": {
+      "categories": []
+    },
+    "/blog/bazenove-prislusenstvi-clanek/": {
+      "categories": [
+        "/prislusenstvi-k-bazenu/",
+        "/vysavace-do-bazenu/",
+        "/bazenove-kartace/"
+      ]
+    },
+    "/blog/bezchlorova-chemie-do-bazenu--vyhody-a-nevyhody/": {
+      "categories": [
+        "/kyslikovy-roztok/",
+        "/kyslikovy-granulat/",
+        "/oxi-kyslikove-tablety-do-bazenu-200g-1kg/"
+      ]
+    },
+    "/blog/casto-kladene-otazky-o-solarnich-sprchach/": {
+      "categories": [
+        "/solarni-sprcha-s-oplachem-nohou-jolly-33-cerna/",
+        "/solarni-sprcha-comfort-alu/",
+        "/solarni-sprcha-comfort-silver/"
+      ]
+    },
+    "/blog/chlor-pomocnik-ne-vrah-clanek/": {
+      "categories": [
+        "/chlornan-sodny/",
+        "/tablety-do-bazenu-chlorove/",
+        "/chlor-sok/"
+      ]
+    },
+    "/blog/chlor-sok--moznosti-davkovani-a-pouziti/": {
+      "categories": [
+        "/bazenova-chemie/",
+        "/algicid/",
+        "/tablety-do-bazenu/"
+      ]
+    },
+    "/blog/chlorace-bazenove-vody/": {
+      "categories": [
+        "/chlornan-sodny-stabilizovany-20l/",
+        "/chlor-sok-organicky-granulat-2kg/",
+        "/multi-tablety-6v1-do-bazenu-200g-10kg/"
+      ]
+    },
+    "/blog/chlorecnany-chloritany-bazeny-koupaliste/": {
+      "categories": [
+        "/chlornan-sodny/",
+        "/chlornan-sodny-stabilizovany-50l/",
+        "/chlornan-sodny-industry--30-l-adr/"
+      ]
+    },
+    "/blog/chlornan-sodny-do-bazenu--jak-davkovat-a-jake-ma-dalsi-pouziti/": {
+      "categories": [
+        "/chlornan-sodny/",
+        "/chlornan-sodny-stabilizovany-5l/",
+        "/chlornan-sodny-stabilizovany-3l/"
+      ]
+    },
+    "/blog/chlornan-sodny-stabilizovany-clanek/": {
+      "categories": [
+        "/chlornan-sodny/"
+      ]
+    },
+    "/blog/chlornan-sodny-tradice-clanek/": {
+      "categories": [
+        "/chlornan-sodny/",
+        "/chlor-do-bazenu/",
+        "/piskove-filtrace-k-bazenu/"
+      ]
+    },
+    "/blog/chlorova-chemie-clanek/": {
+      "categories": [
+        "/bazenova-chemie/",
+        "/chlor-trio-tablety/",
+        "/tablety-do-bazenu-5v1/"
+      ]
+    },
+    "/blog/cisteni-bazenu-a-odstraneni-vodni-linky-clanek/": {
+      "categories": [
+        "/prislusenstvi-k-bazenu/",
+        "/bazenove-cistice/"
+      ]
+    },
+    "/blog/clanek-snizeni-tvrdosti-v-bazenove-vode/": {
+      "categories": [
+        "/chemie-pro-snizeni-tvrdosti-vody-v-bazenu/",
+        "/stabilizator-tvrdosti-vody-v-bazenu/"
+      ]
+    },
+    "/blog/domaci-sauna-na-zahrade-jako-doplnek-k-bazenu-v-zimnim-obdobi/": {
+      "categories": [
+        "/finske-sauny/",
+        "/kamna-do-sauny/",
+        "/infrasauny/"
+      ]
+    },
+    "/blog/filtracni-pisek-a-zeolit-clanek/": {
+      "categories": [
+        "/naplne-do-bazenovych-filtru/",
+        "/pisek-do-piskovych-filtru/",
+        "/filtracni-napln-zeolit-1-2-5-mm-20-kg/"
+      ]
+    },
+    "/blog/fosfaty-v-bazenu/": {
+      "categories": [
+        "/fosfat-minus/",
+        "/fosfat-minus-allalgas-1l/",
+        "/fosfat-minus-allalgas-2l/"
+      ]
+    },
+    "/blog/hodnota-ph-vody-v-bazenu---co-musite-vedet/": {
+      "categories": [
+        "/bazenove-testery-ph/",
+        "/bazenovy-kapkovy-tester-ph/",
+        "/pool-and-spa-test-strips-3-in-1-testovaci-prouzky--50-ks/"
+      ]
+    },
+    "/blog/jak-casto-menit-pisek-ve-filtraci/": {
+      "categories": [
+        "/pisek-do-piskovych-filtru/",
+        "/zeolit-do-piskove-filtrace/",
+        "/filtracni-sklo/"
+      ]
+    },
+    "/blog/jak-casto-menit-vodu-ve-virivce/": {
+      "categories": [
+        "/virivky/",
+        "/virivky-tablety/",
+        "/multi-tablety-6v1-do-bazenu-20g-1-kg/"
+      ]
+    },
+    "/blog/jak-efektivne-dezinfikovat-prostredi-po-povodnich-s-chlornanem-sodnym/": {
+      "categories": [
+        "/chlornan-sodny/"
+      ]
+    },
+    "/blog/jak-funguje-posypova-sul/": {
+      "categories": [
+        "/posypova-sul-25-kg/",
+        "/posypova-sul/"
+      ]
+    },
+    "/blog/jak-funguje-solarni-sprcha--pruvodce-ekologickym-ohrevem-vody-na-vasi-zahrade/": {
+      "categories": [
+        "/solarni-sprchy/",
+        "/zahradni-hadice/",
+        "/solarni-sprcha-happy-go-cerna-23-l/"
+      ]
+    },
+    "/blog/jak-na-zazimovani-bazenu-pet-lahvemi-bez-vypusteni/": {
+      "categories": [
+        "/prislusenstvi-na-zazimovani-bazenu/",
+        "/prislusenstvi-na-zazimovani-bazenu-dilatacni/",
+        "/zazimovac-do-bazenu/"
+      ]
+    },
+    "/blog/jak-odstranit-vodni-kamen/": {
+      "categories": [
+        "/bazenove-cistice/",
+        "/zakladni-cistic-bazenu-1l/",
+        "/gelovy-cistic-super-ca-1l/"
+      ]
+    },
+    "/blog/jak-odzimovat-bazen/": {
+      "categories": [
+        "/zimni-kryci-plachty-na-bazen/",
+        "/bazenove-sitky/",
+        "/vysavace-do-bazenu/"
+      ]
+    },
+    "/blog/jak-pecovat-o-vodu-clanek/": {
+      "categories": [
+        "/bazenova-chemie/"
+      ]
+    },
+    "/blog/jak-prodlouzit-koupaci-sezonu/": {
+      "categories": [
+        "/solarni-plachty-na-bazeny/",
+        "/tepelna-cerpadla-k-bazenu/",
+        "/bazenove-testery/"
+      ]
+    },
+    "/blog/jak-se-starat-o-virivku/": {
+      "categories": [
+        "/virivky-tablety/",
+        "/bazenove-testery/",
+        "/virivky-bromove-tablety/"
+      ]
+    },
+    "/blog/jak-se-zbavit-kuny--pomohou-chlorove-tablety-ci-savo/": {
+      "categories": [
+        "/tablety-do-bazenu-chlorove/",
+        "/chlornan-sodny/",
+        "/tablety-do-bazenu/"
+      ]
+    },
+    "/blog/jak-si-poradit-s-nezadoucimi-vodnimi-rasami-v-bazenove-vode--prevence-a-moznosti-reseni/": {
+      "categories": [
+        "/chlor-sok/",
+        "/algicid/",
+        "/ph-minus/"
+      ]
+    },
+    "/blog/jak-snizit-ph-v-bazenu--kdyz-atakuje-7-8-a-vys/": {
+      "categories": [
+        "/bazenove-testery/",
+        "/ph-minus/",
+        "/ph-plus/"
+      ]
+    },
+    "/blog/jak-udrzuji-cesi-cistou-vodu-v-bazenu/": {
+      "categories": [
+        "/chlornan-sodny/",
+        "/chlornan-vapenaty/",
+        "/sul-do-bazenu/"
+      ]
+    },
+    "/blog/jak-vybrat-spravnou-teleskopickou-tyc-pro-vas-bazen/": {
+      "categories": [
+        "/teleskopicke-tyce/",
+        "/teleskopicka-tyc-1-2---2-4-m/",
+        "/teleskopicka-tyc-1-8---3-6-m-klasik/"
+      ]
+    },
+    "/blog/jak-vyrobit-pristresek-na-filtraci/": {
+      "categories": [
+        "/piskove-filtrace-2/",
+        "/piskove-filtrace-k-bazenu/",
+        "/bazenova-chemie/"
+      ]
+    },
+    "/blog/jaky-vysavac-do-bazenu-vybrat/": {
+      "categories": [
+        "/vysavace-do-bazenu/",
+        "/rucni-bazenove-vysavace/",
+        "/teleskopicke-tyce/"
+      ]
+    },
+    "/blog/kam-a-proc-se-dava-sul-do-mycky/": {
+      "categories": [
+        "/regeneracni-sul/",
+        "/regeneracni-sul-tablety/",
+        "/regeneracni-sul-ctvercova/"
+      ]
+    },
+    "/blog/kyselina-kyanurova-cya/": {
+      "categories": [
+        "/aquachek-testovaci-prouzky-4v1/",
+        "/aquachek-testovaci-prouzky-7v1--bl-/",
+        "/bazenove-testery-kyselina-kyanurova--stabilizator/"
+      ]
+    },
+    "/blog/kyslikova-chemie-do-bazenu--jake-jsou-vyhody-a-nevyhody-teto-setrne-metody/": {
+      "categories": [
+        "/kyslikove-tablety/",
+        "/piskove-filtrace-2/",
+        "/algicid/"
+      ]
+    },
+    "/blog/ledovka-naledi/": {
+      "categories": [
+        "/posypova-sul/"
+      ]
+    },
+    "/blog/mlecna--zakalena-ci-bila-voda-v-bazenu--tady-je-reseni/": {
+      "categories": [
+        "/stabilizator-tvrdosti-vody-v-bazenu/",
+        "/bazenove-testery/",
+        "/ph-plus/"
+      ]
+    },
+    "/blog/modra-skalice--lepsi-na-mech-nez-do-bazenu/": {
+      "categories": [
+        "/modra-skalice-azurito-siran-mednaty/",
+        "/algicid/",
+        "/bazenova-chemie/"
+      ]
+    },
+    "/blog/mozna-ohrozeni-individualnich-zdroju-pitne-vody-a-jejich-reseni-v-souvislosti-s-aktualnimi-povodnovymi-stavy/": {
+      "categories": []
+    },
+    "/blog/multifunkcni-tablety-do-bazenu-5v1-2-clanek/": {
+      "categories": [
+        "/tablety-do-bazenu-5v1/"
+      ]
+    },
+    "/blog/nastaveni-spravneho-ph-podle-zdrojove-vody--proc-je-kazda-voda-jina/": {
+      "categories": [
+        "/ph-plus/",
+        "/ph-minus/",
+        "/uprava-hodnoty-ph/"
+      ]
+    },
+    "/blog/nejcastejsi-zdravotni-problemy-z-vody-v-lete-a-jak-jim-predejit/": {
+      "categories": [
+        "/chlor-do-bazenu/",
+        "/bezchlorova-chemie/",
+        "/sauny/"
+      ]
+    },
+    "/blog/odzimovani-a-priprava-bazenu-na-koupaci-sezonu/": {
+      "categories": [
+        "/bazenova-chemie/",
+        "/ph-minus/",
+        "/ph-plus/"
+      ]
+    },
+    "/blog/odzimovani-bazenu-clanek/": {
+      "categories": [
+        "/bazenova-chemie/",
+        "/zazimovac-do-bazenu/",
+        "/bazenove-testery/"
+      ]
+    },
+    "/blog/otuzovani-v-domacim-bazenu/": {
+      "categories": [
+        "/prislusenstvi-na-zazimovani-bazenu/",
+        "/bazenove-teplomery/",
+        "/bazenove-testery/"
+      ]
+    },
+    "/blog/pece-o-bazen-behem-prazdnin--jak-zajistit-cistou-vodu-i-behem-dovolene/": {
+      "categories": [
+        "/bazenove-sitky/",
+        "/vysavace-do-bazenu/",
+        "/bazenove-testery/"
+      ]
+    },
+    "/blog/pece-o-bazenove-prislusenstvi--vyrobene-z-oceli--behem-provozu-bazenu-a-mimo-koupaci-sezonu/": {
+      "categories": [
+        "/prislusenstvi-k-bazenu/",
+        "/bazenove-schudky/",
+        "/bazenova-chemie/"
+      ]
+    },
+    "/blog/podzemni-voda-clanek/": {
+      "categories": [
+        "/uprava-hodnoty-ph/",
+        "/chemie-pro-snizeni-tvrdosti-vody-v-bazenu/",
+        "/chlornan-sodny/"
+      ]
+    },
+    "/blog/pomalu-rozpustne-tablety-v-davkovaci--jak-davkovat--aby-chlor-vystacil/": {
+      "categories": [
+        "/tablety-do-bazenu-20-g/",
+        "/tablety-do-bazenu-200-g/",
+        "/tablety-do-bazenu-500-g/"
+      ]
+    },
+    "/blog/posypova-sul--efektivni-pomocnik-pri-zimni-udrzbe-komunikaci-a-chodniku/": {
+      "categories": [
+        "/posypova-sul-25-kg/",
+        "/chlorid-horecnaty-pro-zimni-udrzbu-25-kg/"
+      ]
+    },
+    "/blog/potapnik-v-bazenu/": {
+      "categories": [
+        "/bazenove-sitky/",
+        "/bazenove-testery/",
+        "/algicid/"
+      ]
+    },
+    "/blog/proc-se-dela-pena-ve-virivce-a-jak-ji-eliminovat/": {
+      "categories": [
+        "/virivky-odpenovac/",
+        "/vonne-esence-do-virivky/",
+        "/chemie-do-virivky/"
+      ]
+    },
+    "/blog/rasy-v-zahradnim-jezirku/": {
+      "categories": [
+        "/algicid/",
+        "/zeolit-do-piskove-filtrace/",
+        "/uv-lampy/"
+      ]
+    },
+    "/blog/slana-voda-v-bazenu/": {
+      "categories": [
+        "/sul-do-bazenu/",
+        "/bazenova-chemie/",
+        "/tablety-do-bazenu/"
+      ]
+    },
+    "/blog/snehova-kalamita--co-to-je-a-jak-se-muzeme-pripravit/": {
+      "categories": [
+        "/posypova-sul/",
+        "/bazenova-chemie/",
+        "/prislusenstvi-k-bazenu/"
+      ]
+    },
+    "/blog/snizeni-tvrdosti-clanek/": {
+      "categories": [
+        "/tvrdost-vody-v-bazenu/",
+        "/stabilizator-tvrdosti-vody-v-bazenu/",
+        "/uprava-ph-v-bazenu/"
+      ]
+    },
+    "/blog/sokova-dezinfekce-bazenu--kdy-a-proc-je-nezbytna/": {
+      "categories": [
+        "/chlornan-vapenaty/",
+        "/chlor-sok/",
+        "/pisek-do-piskovych-filtru/"
+      ]
+    },
+    "/blog/solarni-plachty-na-bazen--vyhody--pouziti-a-tipy-pro-vyber/": {
+      "categories": [
+        "/solarni-plachty-na-bazeny/",
+        "/tepelna-cerpadla-k-bazenu/",
+        "/tablety-do-bazenu/"
+      ]
+    },
+    "/blog/solarni-sprchy--prakticky-pruvodce-vyberem-a-pouzivanim/": {
+      "categories": [
+        "/solarni-sprcha-s-oplachem-nohou-jolly-33-cerna/",
+        "/solarni-sprcha-comfort-alu/",
+        "/solarni-sprcha-comfort/"
+      ]
+    },
+    "/blog/solarni-sprchy-na-zahradu/": {
+      "categories": [
+        "/solarni-sprchy/",
+        "/solarni-sprcha-s-oplachem-nohou-jolly-33-cerna/",
+        "/solarni-sprcha-comfort-alu-bez-kohoutku-na-oplach-nohou/"
+      ]
+    },
+    "/blog/sul-do-bazenu-clanek/": {
+      "categories": [
+        "/bazenova-chemie/",
+        "/sul-bazenova-25kg-pro-elektrolytickou-upravu-bazenove-vody/",
+        "/sul-do-bazenu-250-kg-cista-vysokoprocentni-solivary-10x25kg/"
+      ]
+    },
+    "/blog/sul-do-bazenu-nebo-bazenova-chemie/": {
+      "categories": [
+        "/bazenove-schudky/",
+        "/solne-chloratory/",
+        "/alkalita-plus/"
+      ]
+    },
+    "/blog/sul-do-zmekcovace-vody/": {
+      "categories": [
+        "/regeneracni-sul/",
+        "/bazenove-testery/",
+        "/tvrdost-vody-v-bazenu/"
+      ]
+    },
+    "/blog/sul-kamenna--zajimavosti--vlastnosti--nejcastejsi-pouziti/": {
+      "categories": [
+        "/sul-do-bazenu/",
+        "/morska-sul-do-bazenu/",
+        "/posypova-sul/"
+      ]
+    },
+    "/blog/tablety-do-bazenu-clanek/": {
+      "categories": [
+        "/skimmery/",
+        "/plovak-do-bazenu/",
+        "/davkovace-chemie-do-bazenu/"
+      ]
+    },
+    "/blog/tester-bazenova-chemie-clanek/": {
+      "categories": [
+        "/bazenove-testery/",
+        "/kapkovy-tester-bazenove-vody-ph-a-cl/",
+        "/bazenovy-kapkovy-tester-phmg-gua/"
+      ]
+    },
+    "/blog/tipy--jak-vycistit-nafukovaci-virivku/": {
+      "categories": [
+        "/vonne-esence-do-virivky/",
+        "/chemie-do-virivky/",
+        "/virivky-tablety/"
+      ]
+    },
+    "/blog/trvala-udrzba-bazenove-vody-clanek/": {
+      "categories": [
+        "/bazenova-chemie/"
+      ]
+    },
+    "/blog/udrzba-bazenove-vody-clanek/": {
+      "categories": [
+        "/bazenova-chemie/"
+      ]
+    },
+    "/blog/uprava-ph-clanek/": {
+      "categories": [
+        "/bazenova-chemie/",
+        "/uprava-hodnoty-ph/",
+        "/ph-plus/"
+      ]
+    },
+    "/blog/voda-v-bazenu-a-kadi-pres-zimu/": {
+      "categories": [
+        "/vlockovac-do-bazenu/",
+        "/sul-do-bazenu/",
+        "/plachty-na-bazen/"
+      ]
+    },
+    "/blog/vonne-esence-clanek/": {
+      "categories": []
+    },
+    "/blog/vse-o-soleni-silnic-a-chodniku/": {
+      "categories": [
+        "/posypova-sul/",
+        "/posypova-sul-25-kg/",
+        "/chlorid-horecnaty-pro-zimni-udrzbu-25-kg/"
+      ]
+    },
+    "/blog/vykaly-v-bazenu-clanek/": {
+      "categories": [
+        "/vlockovac-do-bazenu/",
+        "/chlor-sok/"
+      ]
+    },
+    "/blog/vypusteni-bazenu-po-zime/": {
+      "categories": [
+        "/cerpadla-k-bazenu/",
+        "/chemie-pro-snizeni-tvrdosti-vody-v-bazenu/",
+        "/chlor-do-bazenu/"
+      ]
+    },
+    "/blog/wim-hofova-metoda/": {
+      "categories": [
+        "/bazenove-teplomery/",
+        "/sauny/"
+      ]
+    },
+    "/blog/za-jak-dlouho-ohreje-tepelne-cerpadlo-bazen/": {
+      "categories": [
+        "/tepelna-cerpadla-k-bazenu/",
+        "/solarni-plachty-na-bazeny/",
+        "/bazenova-chemie/"
+      ]
+    },
+    "/blog/zakal-v-bazenu-clanek/": {
+      "categories": []
+    },
+    "/blog/zazimovani-bazenu-a-bazenoveho-prislusenstvi-clanek/": {
+      "categories": [
+        "/prislusenstvi-k-bazenu/",
+        "/skimmery/",
+        "/skimmery-klapky/"
+      ]
+    },
+    "/blog/zazimovani-bazenu-clanek/": {
+      "categories": [
+        "/bazenove-sitky/",
+        "/vlockovac-do-bazenu/",
+        "/vlockovac-blue-1l/"
+      ]
+    },
+    "/blog/zelena-voda-v-bazenu-se-solinatorem-vas-zaskoci--solinator-neni-zazrak/": {
+      "categories": [
+        "/kapkovy-tester-bazenove-vody-ph-a-cl-alternativni-ekonomicka-varianta-novinka-2023/",
+        "/stabilizator-chloru/",
+        "/chlor-stabil-pro-stabilizaci-chloru-v-bazenu-2-kg/"
+      ]
+    },
+    "/blog/zelene-rasy-v-bazenu-clanek/": {
+      "categories": [
+        "/chlor-do-bazenu/",
+        "/ph-minus/",
+        "/ph-plus/"
+      ]
+    },
+    "/blog/zeolit-do-bazenu-a-jezirek-clanek/": {
+      "categories": [
+        "/pisek-do-piskovych-filtru/",
+        "/tvrdost-vody-v-bazenu/",
+        "/filtracni-napln-zeolit-1-2-5-mm-20-kg/"
+      ]
+    },
+    "/blog/zimni-dilatacni-plovaky-clanek/": {
+      "categories": []
+    },
+    "/blog/zimni-kryci-plachty-na-bazen---ochrana-pro-vas-bazen-behem-zimy/": {
+      "categories": [
+        "/zazimovaci-ld-pe-tkana-plachta-na-bazen-200g-m2-oval-6-7-x-4-8-m/",
+        "/nafukovaci-polstar-pod-kryci-plachtu-pro-bazeny-do-5-m/",
+        "/zazimovaci-ld-pe-tkana-plachta-na-bazen-200g-m2-vyroba-na-prani/"
+      ]
+    },
+    "/blog/zivotopis-senora-chlorita/": {
+      "categories": []
+    },
+    "/blog/znecisteni-bazenove-vody-clanek/": {
+      "categories": [
+        "/chlor-do-bazenu/"
+      ]
+    }
+  }
+}

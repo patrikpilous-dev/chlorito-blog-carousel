@@ -1,0 +1,31 @@
+name: Denni refresh dat carouselu
+
+on:
+  schedule:
+    - cron: "40 4 * * *"   # denne 04:40 UTC = 06:40 CEST
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Vygenerovat data
+        run: python pipeline/refresh.py
+
+      - name: Commit a push
+        run: |
+          git config user.name "carousel-bot"
+          git config user.email "actions@github.com"
+          git add -A a index.json
+          # commit i bez zmeny dat: denni aktivita drzi scheduled workflow
+          # zivy (GitHub ho po 60 dnech necinnosti vypina)
+          git commit -m "refresh $(date -u +%F)" || echo "nic ke commitu"
+          git push
