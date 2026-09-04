@@ -73,8 +73,14 @@
       .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   }
 
+  /* Odkaz smi vest jen na vlastni e-shop. Obrazky Chlorito servíruje
+     ze Shoptet CDN, proto ma vlastni whitelist. */
   function safeUrl(u) {
     return /^https:\/\/www\.chlorito\.cz\//.test(u) ? u : "";
+  }
+
+  function safeImg(u) {
+    return /^https:\/\/(www\.chlorito\.cz|cdn\.myshoptet\.com)\//.test(u) ? u : "";
   }
 
   function formatPrice(p) {
@@ -137,7 +143,7 @@
       "<div class=\"ppcar-track\">";
     var vykresleno = [];
     products.forEach(function (p) {
-      var url = safeUrl(p.url), img = safeUrl(p.img);
+      var url = safeUrl(p.url), img = safeImg(p.img);
       if (!url || !img) return;
       var i = vykresleno.length;
       vykresleno.push(p);
