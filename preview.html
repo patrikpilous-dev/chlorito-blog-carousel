@@ -20,16 +20,19 @@
 <div class="meta" id="meta">Načítám…</div>
 <div id="out"></div>
 <script>
-const CSS = ".ppcar{margin:10px 0 26px}.ppcar h3{font-size:16px;margin:0 0 12px;font-weight:600}.ppcar-wrap{position:relative}.ppcar-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:2px;scrollbar-width:none}.ppcar-track::-webkit-scrollbar{display:none}.ppcar-item{flex:0 0 46%;max-width:210px;scroll-snap-align:start;text-align:center}@media(min-width:768px){.ppcar-item{flex-basis:23%}}.ppcar .ppcar-item a{display:block;text-decoration:none !important;color:inherit}.ppcar-item img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;display:block;background:#fff}.ppcar-name{margin:10px 4px 4px;font-size:13px;line-height:1.35;min-height:2.7em}.ppcar-price{font-size:15px;font-weight:600}.ppcar-stock{font-size:12px;color:#009901;margin-top:4px}.ppcar-btn{position:absolute;top:34%;transform:translateY(-50%);width:36px;height:36px;border:1px solid #ddd;border-radius:50%;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}.ppcar-btn:hover{background:#000;color:#fff}.ppcar-prev{left:-8px}.ppcar-next{right:-8px}";
+const CSS = ".ppcar{margin:10px 0 26px}.ppcar h3{font-size:16px;margin:0 0 12px;font-weight:600}.ppcar-wrap{position:relative}.ppcar-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:2px;scrollbar-width:none}.ppcar-track::-webkit-scrollbar{display:none}.ppcar-item{flex:0 0 46%;max-width:210px;scroll-snap-align:start;text-align:center}@media(min-width:768px){.ppcar-item{flex-basis:23%}}.ppcar .ppcar-item a{display:block;text-decoration:none !important;color:inherit}.ppcar-imgwrap{position:relative}.ppcar-item img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;display:block;background:#fff}.ppcar-badge{position:absolute;top:8px;left:8px;color:#fff;font-size:12px;font-weight:700;padding:5px 10px;border-radius:6px;line-height:1.25;box-shadow:0 1px 5px rgba(0,0,0,.22)}.ppcar-name{margin:10px 4px 4px;font-size:15px;line-height:1.4;min-height:2.8em}.ppcar-price{font-size:16px;font-weight:600}.ppcar-stock{font-size:14px;color:#009901;margin-top:4px}.ppcar-btn{position:absolute;top:34%;transform:translateY(-50%);width:36px;height:36px;border:1px solid #ddd;border-radius:50%;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}.ppcar-btn:hover{background:#000;color:#fff}.ppcar-prev{left:-8px}.ppcar-next{right:-8px}";
 const s = document.createElement("style"); s.textContent = CSS; document.head.appendChild(s);
 
+const BADGES=[{text:"🔥 Výhodné",color:"#e8412a"},{text:"🐬 Chlorito doporučuje",color:"#1f6fc2"},{text:"🛒 Lidé právě nakupují",color:"#ef8c00"}];
 function renderCarousel(host, products, nadpis) {
   const sec = document.createElement("section");
   sec.className = "ppcar";
   let html = '<h3>' + nadpis + '</h3><div class="ppcar-wrap"><button class="ppcar-btn ppcar-prev">&#10094;</button><div class="ppcar-track">';
-  for (const p of products) {
-    html += '<div class="ppcar-item"><a href="' + p.url + '" target="_blank"><img loading="lazy" src="' + p.img + '"><div class="ppcar-name">' + p.name + '</div><div class="ppcar-price">' + new Intl.NumberFormat("cs-CZ",{style:"currency",currency:"CZK",maximumFractionDigits:0}).format(p.price) + '</div><div class="ppcar-stock">Skladem</div></a></div>';
-  }
+  products.forEach((p, i) => {
+    const b = BADGES[i];
+    const badge = b ? '<span class="ppcar-badge" style="background:' + b.color + '">' + b.text + '</span>' : '';
+    html += '<div class="ppcar-item"><a href="' + p.url + '" target="_blank"><div class="ppcar-imgwrap">' + badge + '<img loading="lazy" src="' + p.img + '"></div><div class="ppcar-name">' + p.name + '</div><div class="ppcar-price">' + new Intl.NumberFormat("cs-CZ",{style:"currency",currency:"CZK",maximumFractionDigits:0}).format(p.price) + '</div><div class="ppcar-stock">Skladem</div></a></div>';
+  });
   html += '</div><button class="ppcar-btn ppcar-next">&#10095;</button></div>';
   sec.innerHTML = html;
   host.appendChild(sec);

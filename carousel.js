@@ -8,9 +8,10 @@
  * Kazdy ukazuje jine produkty a v GA4 se meri zvlast, takze jde porovnat,
  * ktere umisteni vydelava vic.
  *
- * Mereni: vlastni instance gtag.js s vlastnim merenim ID (samostatny datovy
- * stream v teze GA4 property). Duvod: na webu bezi GTM a volani sdileneho
- * gtag() nic neodesila — overeno merenim pozadavku na /g/collect.
+ * Mereni: sdilene gtag na webu, ale KAZDY event musi mit send_to s merenim ID
+ * GA4. Na webu je vedle GA4 nakonfigurovany i Google Ads (AW-…), takze bez
+ * send_to jde event do Ads a do GA4 nedorazi. Overeno 4.9.2026 merenim
+ * pozadavku na /g/collect: bez send_to 0 pozadavku, se send_to 1.
  */
 (function () {
   "use strict";
@@ -19,39 +20,39 @@
   window.__ppcarLoaded = true;
 
   var BASE = "https://patrikpilous-dev.github.io/chlorito-blog-carousel";
-  var GA_ID = "__GA_MEASUREMENT_ID__";
+  var GA_ID = "G-Y2XT91J533";
   var NADPIS = "Co se vám k tomu bude hodit";
+
+  /* Badge na prvnich tri dlazdicich — stejne jako v upsell pluginu v kosiku,
+     aby to zakaznik znal. Poradi odpovida poradi produktu (nejprodavanejsi). */
+  var BADGES = [
+    { text: "🔥 Výhodné", color: "#e8412a" },
+    { text: "🐬 Chlorito doporučuje", color: "#1f6fc2" },
+    { text: "🛒 Lidé právě nakupují", color: "#ef8c00" },
+  ];
 
   if (!/^\/blog\/[^/]+\/$/.test(location.pathname)) return;
   var articleSlug = location.pathname.replace(/^\/blog\/|\/$/g, "");
 
   /* ---------- mereni ---------- */
 
-  function ppcarGtag() {
-    (window.ppcarLayer = window.ppcarLayer || []).push(arguments);
-  }
-
-  function initGa() {
-    if (window.__ppcarGaInit || GA_ID.indexOf("__") === 0) return;
-    window.__ppcarGaInit = true;
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID + "&l=ppcarLayer";
-    document.head.appendChild(s);
-    ppcarGtag("js", new Date());
-    ppcarGtag("config", GA_ID, { send_page_view: false });
-  }
-
   function ga4(eventName, pozice, items) {
     try {
-      initGa();
-      ppcarGtag("event", eventName, {
+      var params = {
+        send_to: GA_ID,   // bez tohoto event skonci v Ads a do GA4 nedorazi
         item_list_id: "blog_carousel_" + pozice,
         item_list_name: "blog " + pozice + ": " + articleSlug,
         items: items.map(function (p, i) {
           return { item_id: String(p.code), item_name: p.name, price: p.price, index: i };
         }),
-      });
+      };
+      if (typeof window.gtag === "function") {
+        window.gtag("event", eventName, params);
+      } else {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ ecommerce: null });
+        window.dataLayer.push({ event: "blog_carousel_" + eventName, ecommerce: params });
+      }
     } catch (e) { /* mereni nesmi rozbit stranku */ }
   }
 
@@ -93,10 +94,13 @@
     ".ppcar-item{flex:0 0 46%;max-width:210px;scroll-snap-align:start;text-align:center}" +
     "@media(min-width:768px){.ppcar-item{flex-basis:23%}}" +
     ".ppcar .ppcar-item a,.ppcar .ppcar-item a:hover,.ppcar .ppcar-item a:focus{display:block;text-decoration:none !important;color:inherit}" +
+    ".ppcar-imgwrap{position:relative}" +
     ".ppcar-item img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;display:block;background:#fff}" +
-    ".ppcar-name{margin:10px 4px 4px;font-size:13px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.7em}" +
-    ".ppcar-price{font-size:15px;font-weight:600}" +
-    ".ppcar-stock{font-size:12px;color:#009901;margin-top:4px}" +
+    /* badge prevzaty z upsell pluginu v kosiku (.xs-badge) */
+    ".ppcar-badge{position:absolute;top:8px;left:8px;color:#fff;font-size:12px;font-weight:700;padding:5px 10px;border-radius:6px;line-height:1.25;box-shadow:0 1px 5px rgba(0,0,0,.22)}" +
+    ".ppcar-name{margin:10px 4px 4px;font-size:15px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.8em}" +
+    ".ppcar-price{font-size:16px;font-weight:600}" +
+    ".ppcar-stock{font-size:14px;color:#009901;margin-top:4px}" +
     ".ppcar-btn{position:absolute;top:34%;transform:translateY(-50%);width:36px;height:36px;border:1px solid #ddd;border-radius:50%;background:#fff;cursor:pointer;font-size:16px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:2;opacity:.92}" +
     ".ppcar-btn:hover{background:#000;color:#fff;border-color:#000}" +
     ".ppcar-prev{left:-8px}.ppcar-next{right:-8px}" +
@@ -137,8 +141,12 @@
       if (!url || !img) return;
       var i = vykresleno.length;
       vykresleno.push(p);
+      var b = BADGES[i];
+      var badge = b ? "<span class=\"ppcar-badge\" style=\"background:" + esc(b.color) +
+        "\">" + esc(b.text) + "</span>" : "";
       html += "<div class=\"ppcar-item\"><a href=\"" + esc(url) + "\" data-i=\"" + i + "\">" +
-        "<img loading=\"lazy\" src=\"" + esc(img) + "\" alt=\"" + esc(p.name) + "\">" +
+        "<div class=\"ppcar-imgwrap\">" + badge +
+        "<img loading=\"lazy\" src=\"" + esc(img) + "\" alt=\"" + esc(p.name) + "\"></div>" +
         "<div class=\"ppcar-name\">" + esc(p.name) + "</div>" +
         "<div class=\"ppcar-price\">" + esc(formatPrice(p.price)) + "</div>" +
         "<div class=\"ppcar-stock\">Skladem</div></a></div>";
