@@ -21,8 +21,6 @@
 
   var BASE = "https://patrikpilous-dev.github.io/chlorito-blog-carousel";
   var GA_ID = "G-Y2XT91J533";
-  var NADPIS = "Co se vám k tomu bude hodit";
-
   /* Badge na prvnich tri dlazdicich — stejne jako v upsell pluginu v kosiku,
      aby to zakaznik znal. Poradi odpovida poradi produktu (nejprodavanejsi). */
   var BADGES = [
@@ -93,7 +91,6 @@
 
   var CSS = "" +
     ".ppcar{margin:32px 0 44px;font-family:inherit}" +
-    ".ppcar h3{font-size:17px;margin:0 0 14px;font-weight:600}" +
     ".ppcar-wrap{position:relative}" +
     ".ppcar-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:2px;scrollbar-width:none;-ms-overflow-style:none}" +
     ".ppcar-track::-webkit-scrollbar{display:none}" +
@@ -138,7 +135,7 @@
     vlozStyl();
     var sec = document.createElement("section");
     sec.className = "ppcar ppcar-" + pozice;
-    var html = "<h3>" + esc(NADPIS) + "</h3><div class=\"ppcar-wrap\">" +
+    var html = "<div class=\"ppcar-wrap\">" +
       "<button class=\"ppcar-btn ppcar-prev\" type=\"button\" aria-label=\"Předchozí\">&#10094;</button>" +
       "<div class=\"ppcar-track\">";
     var vykresleno = [];
