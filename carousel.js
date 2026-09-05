@@ -54,12 +54,17 @@
     } catch (e) { /* mereni nesmi rozbit stranku */ }
   }
 
+  /* Klik si pamatujeme na dobu navstevy. Na dekovaci strance pak thankyou.js
+     spari koupene polozky s temi, na ktere clovek v carouselu kliknul, a posle
+     do GA4 skutecnou trzbu. Parujeme podle pid (Shoptet order.content[].id),
+     nazev je zaloha. */
   function markClick(product, pozice) {
     try {
       var log = JSON.parse(sessionStorage.getItem("ppcar_clicks") || "[]");
-      log.push({ code: product.code, price: product.price, pozice: pozice,
+      log.push({ pid: String(product.pid || ""), name: product.name,
+                 price: product.price, pozice: pozice,
                  article: articleSlug, ts: Date.now() });
-      sessionStorage.setItem("ppcar_clicks", JSON.stringify(log.slice(-20)));
+      sessionStorage.setItem("ppcar_clicks", JSON.stringify(log.slice(-30)));
     } catch (e) { /* privatni rezim */ }
   }
 

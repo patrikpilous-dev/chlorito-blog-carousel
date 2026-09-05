@@ -33,7 +33,8 @@ def slug_of(url):
 
 
 CARD_RE = re.compile(
-    r'data-micro="product"[^>]*data-micro-identifier="(?P<guid>[^"]+)".*?'
+    r'data-micro="product"[^>]*data-micro-product-id="(?P<pid>[^"]+)"[^>]*'
+    r'data-micro-identifier="(?P<guid>[^"]+)".*?'
     r'href="(?P<href>[^"]+)"[^>]*class="image".*?'
     r'(?P<imgtag><img[^>]+>).*?'
     r'data-testid="productCardName">\s*(?P<name>[^<]+?)\s*</span>.*?'
@@ -85,7 +86,9 @@ def single_product(path, html):
         return []
     slug = path.strip("/").split("/")[-1]
     m = re.search(r'data-micro-identifier="([^"]+)"', html)
-    return [{"slug": slug, "code": m.group(1) if m else slug, "name": name,
+    mp = re.search(r'data-micro-product-id="([^"]+)"', html)
+    return [{"slug": slug, "code": m.group(1) if m else slug,
+             "pid": mp.group(1) if mp else "", "name": name,
              "url": SHOP + path, "img": img, "price": price, "_direct": True}]
 
 
@@ -125,6 +128,8 @@ def category_products(cat_path):
             out.append({
                 "slug": slug,
                 "code": m.group("guid"),
+                # id produktu — timhle se na dekovaci strance paruje nakup
+                "pid": m.group("pid"),
                 "name": re.sub(r"\s+", " ", m.group("name")).strip(),
                 "url": href if href.startswith("http") else SHOP + href,
                 "img": img,
