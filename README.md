@@ -41,13 +41,29 @@ Token je v uživatelské proměnné `SHOPTET_CHLORITO` a **nesmí se dostat do
 repozitáře**. Proto tenhle krok neběží v Actions; denní refresh dat token
 nepotřebuje, čte jen veřejné stránky kategorií.
 
+## Atribuce tržeb (thankyou.js)
+
+`carousel.js` si při kliku uloží do `sessionStorage` (`ppcar_clicks`) id produktu,
+název, cenu a pozici (top/bottom). Na děkovací stránce běží `thankyou.js`, spáruje
+zakoupené položky (`shoptet.order.content[]`) s těmi kliknutými a pošle do GA4
+událost **`blog_carousel_purchase`** se skutečnou tržbou, zvlášť pro každou pozici.
+
+Proč to takhle: Shoptet posílá vlastní `purchase` a naše `item_list_id` v něm není,
+takže GA4 by tržbu k seznamu nepřiřadilo samo.
+
+- Párování: primárně `pid` (= `data-micro-identifier`… pozor, `pid` je
+  `data-micro-product-id`, shoduje se s `order.content[].id`), záloha normalizovaný název.
+- Okno: klik starší než 24 h se nepočítá. Po odeslání se `ppcar_clicks` maže.
+- Vyhodnocení v GA4: událost `blog_carousel_purchase`, parametr `item_list_id`
+  (`blog_carousel_top` / `blog_carousel_bottom`), metrika `value`.
+
 ## Nasazení
 
-1. Založit v GA4 Chlorito druhý webový datový stream („Blog carousel"),
-   zkopírovat jeho měřicí ID.
-2. Doplnit ho do `pipeline/config.json` (`ga_measurement_id`) i do `carousel.js`
-   (`GA_ID`), commitnout.
-3. Vložit do šablony (Zápatí `<BODY>`) script tag se SRI otiskem.
+1. `carousel.js` → šablona, Zápatí `<BODY>`, se SRI otiskem.
+2. `thankyou.js` → šablona, záložka **Dokončená objednávka**, se SRI otiskem.
+
+Měřicí ID GA4 je `G-Y2XT91J533` a je v obou skriptech natvrdo. Každá událost musí
+mít `send_to` — bez něj skončí v Google Ads a do GA4 nedorazí.
 
 Otisk: `curl -s <url carousel.js> | python -c "import sys,hashlib,base64;print('sha384-'+base64.b64encode(hashlib.sha384(sys.stdin.buffer.read()).digest()).decode())"`
 
